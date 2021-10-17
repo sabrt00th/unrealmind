@@ -26,10 +26,11 @@ for scenes in bpy.data.scenes:
 for f in range (1,1001):
     brick.rotation_euler = (radians(randint(0,360)),radians(randint(0,360)),radians(randint(0,360))) ## Rotates the brick into a random position.
     brick.active_material.diffuse_color = (random(),random(),random(),1) ## Sets the brick's colour to a random, solid hue.
-    bpy.data.scenes['Scene'].render.filepath = f'/[insertPath]/4x4plate_{f}.jpg' ## Regulates where the renders get saved; the for-loop helps here
+    bpy.data.scenes['Scene'].render.filepath = f'/[insertPath]/testScreenshots/4x4plate_{f}.jpg' ## Regulates where the renders get saved; the for-loop helps here
                                                                                       ## by increasing the 'f' value in the name with every loop (AKA
                                                                                       ## screenshot that Blender takes), making the renders easy to
-                                                                                      ## organise. Make sure to replace [insertPath] with your own.
+                                                                                      ## organise. Make sure to replace [insertPath] with your own, as well as
+                                                                                      ## change the brick name per brick you want to train the model with.
                                                                                       
     bpy.ops.render.render (write_Still=True) ## This single line does all of the actual rendering and saving. 
                                              ## DO NOT TOUCH. *EVER*.
