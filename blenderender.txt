@@ -9,9 +9,9 @@ def look_at(obj_camera,point):
     rot_quat = direction.to_track_quat('-Z','Y')
     obj_camera.rotation_euler = rot_quat.to_euler()
     
-camera = bpy.data.objects['Camera']  # Assignes the name 'camera' to the Blender camera.
-brick = bpy.data.objects['4x4plate'] # Assignes the name 'brick' to the imported object (or any other 3D object you're trying to train)
-                                     # Remember that you'll have to change the '4x4plate' to the name of the file you're rendering.
+camera = bpy.data.objects['Camera']  # Assigns the name 'camera' to the Blender camera.
+brick = bpy.data.objects['4x4plate'] # Assigns the name 'brick' to the imported object you're trying to train your network on. 
+                                     # Remember that you'll have to change '4x4plate' to the name of the file you've imported.
 
 camera.location[1] = -30.0                          # Moves the camera 30 units away from its origin (doesn't matter which axis, 
                                                     # as long as it's far away enough to render the entire object).
