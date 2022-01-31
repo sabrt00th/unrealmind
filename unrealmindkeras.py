@@ -24,10 +24,10 @@ train_datagen,test_datagen = ImageDataGenerator(rescale=1./255) # rescales the i
 base_dir = '/[insertPath]/unrealmindscreenshots' # sets the base directory. again, replace [insertPath] with your personal path.
 
 train_dir = '/[insertPath]/unrealmindscreenshots/train' # sets the training directory.
-train_generator = train_datagen.flow_from_directory(train_dir,target_size=(150,150),batch_size=20,class_mode='binary') 
+train_generator = train_datagen.flow_from_directory(train_dir,target_size=(150,150),batch_size=20,class_mode='binary') # target_size needs to match the width+height of the images you're planninng to train this thing on
 
 validation_dir = '/[insertPath]/unrealmindscreenshots/validation' # sets the validation directory.
-validation_generator = test_datagen.flow_from_directory(validation_dir,target_size=(150,150),batch_size=20,class_mode='binary')
+validation_generator = test_datagen.flow_from_directory(validation_dir,target_size=(150,150),batch_size=20,class_mode='binary') # ditto.
 
 test_loss,test_acc = model.evaluate_generator(test_generator,steps=50) # 50 drumrolls, please...
 
